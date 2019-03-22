@@ -1,0 +1,74 @@
+Classe ContaBancaria
+Atributos 
+
++ numConta
+# tipo (cc ou cp)
+- dono
+- saldo 
+- status (aberta ou fechada)
+
+fazer getters e setters
+
+Métodos
+construtor() {
+	status = false
+	saldo = 0
+}
+
++ abrirConta(tipo) {
+	setTipo(tipo)
+	setStatus(true)
+	se (t == "cc") então 
+		saldo = 50
+	senao se (t == "cp") então 
+		saldo = 150
+	fimse
+}
+
++ fecharConta() {
+	se (saldo > 0) então 
+		escreva("Conta com dinheiro");
+	senao se (saldo < 0) então 
+		escreva("Conta em débito")
+	senao
+		setStatus(false)
+	fimse
+}
+
++ depositar(v) {
+	se (status == true) então 
+		setSaldo(getSaldo() + v)
+	senao
+		escreva("Conta fechada, impossível depositar")
+	fimse
+}
+
++ sacar(v) {
+	se (getStatus(true)) então 
+		se (getSaldo() > v) então 
+			setSaldo(getSaldo() - v)
+		senao
+			escreva("Saldo insuficiente para fazer saque")
+		fimse
+	senao
+		escreva("Conta fechada, impossível sacar")
+	fimse
+}
+
++ pagarMensal() {
+	var v
+	se (getTipo(cc)) então 
+		v = 12
+	senao se (getTipo(cp)) então 
+		v = 20
+	fimse
+	se (getStatus(true)) então
+		se (getSaldo() > v) então 
+			setSaldo(getSaldo() - v)
+		senao
+			escreva("Impossível pagar taxa mensal, saldo insuficiente")
+		fimse	 
+	senao
+		escreva("Conta fechada, impossível pagar taxa mensal")
+	fimse
+}

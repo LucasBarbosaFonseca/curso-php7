@@ -1,0 +1,32 @@
+Objeto TV
+
+Atributos:
+Marca
+Modelo 
+Polegada 
+Canal 
+Volume
+Ligada  
+
+Métodos:
+Ligar()
+Desligar()
+MudarCanal()
+AumentarVolume()
+DiminuirVolume()
+
+-----------------------------------------------------------
+
+Objeto SessãoFisioterapia 
+
+Atributos:
+Dia
+TempoDuração 
+Exercícios
+Fisioterapeuta
+Paciente 
+
+Métodos:
+Marcar()
+Desmarcar()
+Adiar()

@@ -1,0 +1,153 @@
+<?php
+
+	require_once 'Lutador.php';
+
+	class LutadorUEC implements Lutador {
+
+		private $nome;
+		private $nacionalidade;
+		private $idade;
+		private $altura;
+		private $peso;
+		private $categoria;
+		private $vitorias;
+		private $derrotas;
+		private $empates;
+
+		//Método Construtor Complexo 
+		public function __construct($no, $na, $i, $a, $p, $v, $d, $e) {
+			$this->setNome($no);
+			$this->setNacionalidade($na);
+			$this->setIdade($i);
+			$this->setAltura($a);
+			$this->setPeso($p);
+			$this->setVitorias($v);
+			$this->setDerrotas($d);
+			$this->setEmpates($e);
+		}
+
+		//Métodos
+		public function apresentar() {
+			echo "<br>Lutador: " . $this->getNome();
+			echo "<br>Origem: " . $this->getNacionalidade();
+			echo "<br>Idade: " . $this->getIdade() . " anos";
+			echo "<br>Altura: " . $this->getAltura() . " m";
+			echo "<br>Pesando: " . $this->getPeso() . " Kg";
+			echo "<br>Com " . $this->getVitorias() . " vitórias";
+			echo "<br>Com " . $this->getDerrotas() . " derrotas";
+			echo "<br>E com " . $this->getEmpates() . " empates";
+		}
+
+		public function status() {
+			echo "<br>Nome: " . $this->getNome();
+			echo "<br>Categoria: " . $this->getCategoria();
+			echo "<br>" . $this->getVitorias() . " vitórias";
+			echo "<br>" . $this->getDerrotas() . " derrotas";
+			echo "<br>" . $this->getEmpates() . " empates";
+		}
+
+		public function ganharLuta() {
+			$this->setVitorias($this->getVitorias() + 1);
+		}
+
+		public function perderLuta() {
+			$this->setDerrotas($this->getDerrotas() + 1);
+		}
+
+		public function empatarLuta() {
+			$this->setEmpates($this->getEmpates() + 1);
+		}
+
+		//Getters and Setters
+		public function getNome() {
+			return $this->nome;
+		}
+
+		public function setNome($no) {
+			$this->nome = $no;
+		}
+
+		public function getNacionalidade() {
+			return $this->nacionalidade;
+		}
+
+		public function setNacionalidade($na) {
+			$this->nacionalidade = $na;
+		}
+
+		public function getIdade() {
+			return $this->idade;
+		}
+
+		public function setIdade($i) {
+			$this->idade = $i;
+		}
+
+		public function getAltura() {
+			return $this->altura;
+		}
+
+		public function setAltura($a) {
+			$this->altura = $a;
+		}
+
+		public function getPeso() {
+			return $this->peso;
+		}
+
+		public function setPeso($p) {
+			$this->peso = $p;
+			$this->setCategoria();
+		}
+
+		public function getCategoria() {
+			return $this->categoria;
+		}
+
+		public function setCategoria() {
+			
+			if ($this->getPeso() < 52.2) {
+				$this->setCategoria("Inválido");
+			}
+			elseif ($this->getPeso() <= 70.3) {
+				$this->setCategoria("Leve");
+			}
+			elseif ($this->getPeso() <= 83.9) {
+				$this->setCategoria("Médio");
+			}
+			elseif ($this->getPeso() <= 120.2) {
+				$this->setCategoria("Pesado");
+			}
+			else {
+				$this->setCategoria("Inválido");
+			}
+
+		}
+
+		public function getVitorias() {
+			return $this->vitorias;
+		}
+
+		public function setVitorias($v) {
+			$this->vitorias = $v;
+		}
+
+		public function getDerrotas() {
+			return $this->derrotas;
+		}
+
+		public function setDerrotas($d) {
+			$this->derrotas = $d;
+		}
+
+		public function getEmpates() {
+			return $this->empates;
+		}
+
+		public function setEmpates($e) {
+			$this->empates = $e;
+		}
+
+	} 
+
+?>

@@ -1,0 +1,26 @@
+Encapsulamento 
+
+"Ocultar partes independentes da implementação, permitindo construir partes invisíveis 
+ao mundo exterior!"
+
+Encapsulamento significa separar o programa em partes, o mais isolado possível, criando uma 
+capsula para cada parte do programa protegendo seu código do mundo exterior, pois importa
+a funcionalidade de cada parte e não seu código.
+A ideia do encapsulamento é tornar o software mais flexível, fácil de modificar e de criar 
+novas implementações. O encapsulamento serve resumidamente para controlar o acesso aos 
+atributos e métodos de uma classe.
+
+Vantagens de encapsular
+- Tornar mudanças invisíveis 
+- Facilitar a reutilização do código
+- Reduzir os efeitos colaterais 
+
+Interface 
+
+"Lista de serviços fornecidos por um componente. E o contato com o mundo exterior, que define 
+o que pode ser feito com um objeto dessa classe!"
+
+Interface é o canal de comunicação externa que conversa com os métodos da classe encapsulados
+definindo o que pode ser feito com os objetos da classe. No arquivo da interface tem uma lista 
+com métodos abstratos com os mesmos nomes dos métodos da classe, essa interface é implementada 
+na classe.

@@ -2,20 +2,20 @@
 
 	class ContaBancaria {
 
-		//Atributos
-		public $NumConta;
-		protected $Tipo;
-		private $Dono;
-		private $Saldo;
-		private $Status;
+		//Atributus
+		public $numConta;
+		protected $tipo;
+		private $dono;
+		private $saldo;
+		private $status;
 
-		//Método construtor simples que seta valores para quando objeto for instanciado
+		//Método Construtor 
 		public function __construct() {
 			$this->setSaldo(0);
 			$this->setStatus(false);
 		}
 
-		//Métodos de comportamento da classe
+		//Métodos de comportamento 
 		public function abrirConta($t) {
 			$this->setTipo($t);
 			$this->setStatus(true);
@@ -28,117 +28,115 @@
 			}
 		}
 
-		public function fecharConta() {
-			if ($this->getSaldo() > 0) {
-				echo "<p>Essa conta não pode ser fechada, pois a mesma tem dinheiro...</p>";
-			}
-			elseif ($this->getSaldo() < 0) {
-				echo "<p>Essa conta não pode ser fechada, pois a mesma esta em débito...</p>";
-			}
-			else {
-				$this->setStatus(false);
-				echo "<p>Conta fechada...</p>";
-			}
-		}
-
-		public function depositar($v) {
+		public function depositar($valor) {
 			if ($this->getStatus(true)) {
-				$this->setSaldo($this->getSaldo() + $v);
+				
+				$this->setSaldo($this->getSaldo() + $valor);
 
-				//Permitido fazer do modo acima como o abaixo 
-				//$this->Saldo = $this->Saldo + $v
+				echo "Foi depositado R$ ".$valor." reais em sua conta.";
 
-				echo "<p>Você depositou R$ ".$v." reais em sua conta...</p>";
 			}
 			else {
-				echo "<p>Conta fechada, impossível depositar...</p>";
+
+				echo "Impossível depositar, pois a conta está fechada.";
+
 			}
 		}
 
-		public function sacar($v) {
+		public function sacar($valor) {
 			if ($this->getStatus(true)) {
+				
+				$this->setSaldo($this->getSaldo() - $valor);
 
-				if ($this->getSaldo() > $v) {
-					$this->setSaldo($this->getSaldo() - $v);
-					echo "<p>Você sacou R$ ".$v." reais de sua conta...</p>";
-				}
-				else {
-					echo "<p>Saldo insuficiente para realizar saque...</p>";
-				}
+				echo "Foi sacado R$ ".$valor." reais de sua conta.";
 
 			}
 			else {
-				echo "<p>Conta  fechada, impossível sacar...</p>";
+
+				echo "Impossível sacar, pois a conta está fechada.";
+
 			}
 		}
 
-		public function pagarMensal() {
-			$v;
+		public function pagarMensalidade() {
+			$valor;
 
 			if ($this->getTipo("cc")) {
-				$v = 12;
+				$valor = 12;
 			}
 			elseif ($this->getTipo("cp")) {
-				$v = 20;
+				$valor = 20;
 			}
 
 			if ($this->getStatus(true)) {
 				
-				if ($this->getSaldo() > $v) {
-					$this->setSaldo($this->getSaldo() - $v);
-					echo "<p>Mensalidade paga com sucesso...</p>";
+				if ($this->getSaldo() > $valor) {
+					$this->setSaldo($this->getSaldo() - $valor);
 				}
 				else {
-					echo "<p>Impossível pagar mensalidade, saldo insuficiente...</p>";
+					echo "Impossível pagar taxa mensal, saldo insuficiente.";
 				}
 
 			}
 			else {
-				echo "<p>Conta fechada, impossível pagar mensalidade...</p>";
+
+				echo "Conta fechada, impossível pagar taxa mensal.";
+
 			}
 		}
 
-		//Getters e Setters dos atributos
+		public function fecharConta() {
+			if ($this->getSaldo() > 0) {
+				echo "Impossível fechar a conta, pois está com dinheiro.";
+			}
+			elseif ($this->getSaldo() < 0) {
+				echo "Impossível fechar a conta, pois está em débito.";
+			}
+			else {
+				$this->setStatus(false);
+			}
+		}
+		
+		//Getters e Setters
 		public function getNumConta() {
-			return $this->NumConta;
+			return $this->numConta;
 		}
 
-		public function setNumConta($n) {
-			$this->NumConta = $n;
+		public function setNumConta($nc) {
+			$this->numConta = $nc;
 		}
 
 		public function getTipo() {
-			return $this->Tipo;
+			return $this->tipo;
 		}
 
 		public function setTipo($t) {
-			$this->Tipo = $t;
+			$this->tipo = $t;
 		}
 
 		public function getDono() {
-			return $this->Dono;
+			return $this->dono;
 		}
 
 		public function setDono($d) {
-			$this->Dono = $d;
+			$this->dono = $d;
 		}
 
 		public function getSaldo() {
-			return $this->Saldo;
+			return $this->saldo;
 		}
 
 		public function setSaldo($sal) {
-			$this->Saldo = $sal;
+			$this->saldo = $sal;
 		}
 
 		public function getStatus() {
-			return $this->Status;
+			return $this->status;
 		}
 
 		public function setStatus($sta) {
-			$this->Status = $sta;
+			$this->status = $sta;
 		}
-
 	}
 
 ?>

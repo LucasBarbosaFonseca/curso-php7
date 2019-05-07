@@ -2,9 +2,9 @@
 
 	//Essa interface e seus métodos abstratos serão implementados na ClassControleRemoto.php
 
-	interface Controlador {
+	//Todos os métodos abstratos de uma interface devem ser públicos
 
-		//Métodos Abstratos 
+	interface Controlador {
 		public function ligar();
 		public function desligar();
 		public function abrirMenu();
@@ -15,7 +15,6 @@
 		public function desligarMudo();
 		public function play();
 		public function pause();
-
 	}
 
 ?>

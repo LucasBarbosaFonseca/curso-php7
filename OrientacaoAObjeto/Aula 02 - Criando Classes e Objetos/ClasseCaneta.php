@@ -23,39 +23,40 @@
 	Coisa material ou abstrata que pode ser percebida pelos sentidos e descrita por meio das suas 
 	características, comportamentos e estado atual. Quando instanciamos uma classe nós criamos um objeto.
 	A classe é como se fosse um modelo e o objeto instanciado é o resultado desse modelo. 
+
+	Palavra $this:
+	Serve para mexermos com atributos dentro dos métodos da classe. Diz dentro do método que aquele 
+	atributo pertence aquela classe, fazendo uma referência.
 	*/
 
 	class Caneta {
-		
+
+		//Atributos
 		var $modelo;
 		var $cor;
 		var $ponta;
 		var $carga;
 		var $tampada;
 
+		//Métodos
 		function rabiscar() {
 
 			if ($this->tampada == true) {
-				echo "<p>Não posso rabiscar!</p>";
+				echo "<p>ERRO: Não é possível rabiscar, pois a caneta está tampada!</p>";
 			}
 			else {
 				echo "<p>Estou rabiscando...</p>";
 			}
-			
-		}		
+
+		}
 
 		function tampar() {
-
 			$this->tampada = true;
-
 		}
 
 		function destampar() {
-
 			$this->tampada = false;
-
 		}
-	
-	}
 
+	}
 ?>

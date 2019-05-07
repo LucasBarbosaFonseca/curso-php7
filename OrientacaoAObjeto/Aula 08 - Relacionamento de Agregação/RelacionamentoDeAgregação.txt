@@ -1,0 +1,30 @@
+Nessa Aula será mostrado como relacionamos as classes umas as outras, existem vários tipos de relacionamento,
+mas nessa aula será visto o relacionamento de agregação.
+
+--------------------------------------------------------------------------------------------------------------
+
+Agregação:
+No relacionamento de agregação no diagrama de uml é representado por uma linha sólida e um losangulo na ponta
+apontando para a classe a qual iremos relacionar. Temos uma classe Lutador e outra classe Luta, a classe Lutador 
+está apontando para a classe luta criando um relacionamento, o lutador disputa uma luta.
+
+--------------------------------------------------------------------------------------------------------------
+
+Multiplicidade:
+Na poo, os relacionamentos tem a chamada multiplicidade que é como a cardinalidade no modelo entidade 
+relacionamento de banco de dados. A multiplicidade fica assim nesse nosso caso:
+
+- Cada Lutador pode participar de quantas lutas? No mínimo 0 lutas e no máximo várias lutas e então 
+ao lado da classe luta vamos representar o relacionamento da classe lutador com a classe luta 
+colocando 0..*. 
+
+- Agora vamos fazer ao contrário, vamos relacionar a classe luta com a classe lutador respondendo a
+pregunta: Cada luta pode ter quantos lutadores? Somente 2 lutadores então ao lado da classe lutador 
+vamos representar o relacionamento da classe luta com a classe lutador colocando *.
+
+--------------------------------------------------------------------------------------------------------------
+
+Tipo abstrato de dados:
+Na classe Luta vamos ter 2 lutadores que serão um o desafiado e o outro o deafiante. Como os lutadores 
+são da classe Lutador que estão na classe Luta, então além de colocarmos o desafiado e o desafiante
+vamos colocar a classe Lutador dentro da classe Luta utilizando o comando require_once 'ClassLutador.php'.

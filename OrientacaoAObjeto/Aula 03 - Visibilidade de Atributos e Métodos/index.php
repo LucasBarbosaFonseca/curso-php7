@@ -12,13 +12,14 @@
 		$c1 = new Caneta;
 
 		$c1->modelo = "Bic Cristal";
-		$c1->cor = "Azul";
+		$c1->cor = "Preta";
 		//$c1->ponta = 0.5;
-		//$c1->carga = 80;
+		//$c1->carga = 70;
 		//$c1->tampada = false;
 
+		$c1->rabiscar();
 		$c1->destampar();
-		
+
 		print_r($c1);
 
 	?>

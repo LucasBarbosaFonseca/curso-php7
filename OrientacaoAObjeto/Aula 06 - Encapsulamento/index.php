@@ -2,15 +2,19 @@
 
 <?php
 
-	require_once 'ClassControleRemoto.php';
+    require_once 'ClassControleRemoto.php';
 
-	$c = new ControleRemoto();
-	$c->ligar();
-	$c->maisVolume();
-	$c->menosVolume();
-	$c->abrirMenu();
+    $cr = new ControleRemoto();
 
-	print_r($c);
+    $cr->ligar();
+
+    $cr->play();
+
+    $cr->maisVolume();
+
+    $cr->abrirMenu();
+
+    print_r($cr);
 
 ?>
 

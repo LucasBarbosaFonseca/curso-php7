@@ -7,30 +7,32 @@
 <body>
 	<?php
 
+		//Temos que importar a classe para o arquivo onde será instanciada a classe
 		require_once 'ClasseCaneta.php';
 
 		/* Instância:
 		O que está abaixo é uma instância de uma classe. Um instanciamento é quando criamos um objeto a partir 
 		de uma classe */
-		$c1 = new Caneta;
+		$c1 = new Caneta();
 
-		$c1->modelo = "Bic Cristal";
+		$c1->modelo = "Bic";
 		$c1->cor = "Azul";
 		$c1->ponta = 0.5;
-		$c1->carga = 80;
+		$c1->carga = 50;
 		$c1->tampada = false;
-		$c1->destampar();
+
+		$c1->tampar();
 
 		$c1->rabiscar();
-
-		print_r($c1);
+		
+		var_dump($c1);
 
 	?>
 
 	<br><br><br>
 
 	<?php
-
+	
 		require_once 'ClasseCarro.php';
 
 		$carro = new Carro;
@@ -46,13 +48,14 @@
 		$carro->andar();
 
 		print_r($carro);
-
+	
 	?>
 
 	<br><br><br>
 
 	<?php
 
+		
 		require_once 'ClasseTelevision.php';
 
 		$tv = new Television;

@@ -1,0 +1,25 @@
+- Classe Progenitora: é a classe mãe
+
+- Super-Classe: é classe mãe também, igualmente a progenitora. E a classe a qual sub-classes e suas
+                descendentes herdam tudo dela.
+
+- Sub-Classe: são classes filhas das classes progenitoras. As sub-classes herdam tudo da sua classe progenitora,
+              ou seja, da classe mãe e de suas classes ancestrais.
+
+- Protected: o modificador de acesso "protected" define que o atributo ou método que esteja com esse modificador
+             "protected" só estejam acessiveis pela a classe a qual pertencem e para as suas sub-classes da classe 
+             a qual pertencem.
+
+- Classe Raiz: é a classe que não tem super-classe, que só tem sub-classes. E a raiz da árvore hierárquica, ou
+               seja, onde nasce a árvore hierárquica.
+
+- Classe Folha: são as classes que não tem filhas, ou seja, as classes que não tem sub-classes.
+
+- Ancestrais: classe avó de uma ou mais classes.
+
+- Descendentes: classes netas das classes avós.
+
+- Especialização: quando percorremos a árvore hierárquica da classe raiz para baixo.
+
+- Generalização: quando percorremos a árvore hierárquica das classes folha para cima.
+

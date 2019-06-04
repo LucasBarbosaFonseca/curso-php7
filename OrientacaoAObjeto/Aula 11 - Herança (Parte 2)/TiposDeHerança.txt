@@ -1,0 +1,10 @@
+Tipos de Herança 
+
+- Herança de Implementação:
+  Conhecida também como herança pobre, é quando uma sub-classe que não tem atributos, nem métodos herda todos 
+  os atributos e métodos de sua classe progenitora.
+
+- Herança para Diferença:
+  Quando temos uma sub-classe com seus próprios atributos e métodos implementados e essa sub-classe
+  herda os atributos e métodos de sua classe progenitora ficando com seus próprios atributos e métodos
+  mais os atributos e métodos herdados. 
